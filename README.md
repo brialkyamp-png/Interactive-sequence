@@ -1,53 +1,55 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Interactive Sequence</title>
+  <title>Interactive Quiz</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
       margin-top: 50px;
+      background-color: #f0f0f0;
     }
     .container {
-      max-width: 400px;
+      max-width: 500px;
       margin: auto;
-      padding: 20px;
+      padding: 30px;
       border: 2px solid #333;
-      border-radius: 10px;
-      background-color: #f0f0f0;
+      border-radius: 12px;
+      background-color: #fff;
     }
     button {
       margin: 10px;
-      padding: 10px 20px;
+      padding: 12px 25px;
       font-size: 16px;
       cursor: pointer;
     }
   </style>
   <script>
     function step1() {
-      document.getElementById("message").innerText = "Your names are: Deusdedit Nyamwamu";
-      document.getElementById("nextBtn").style.display = "inline-block";
-      document.getElementById("cancelBtn").style.display = "inline-block";
-      document.getElementById("nextBtn").onclick = step2;
-      document.getElementById("cancelBtn").onclick = stopSequence;
+      document.getElementById("message").innerText = "Your name is: Deusdedit Nyamwamu";
+      document.getElementById("correctBtn").style.display = "inline-block";
+      document.getElementById("wrongBtn").style.display = "inline-block";
+      
+      document.getElementById("correctBtn").onclick = step2;
+      document.getElementById("wrongBtn").onclick = wrongStep;
     }
 
     function step2() {
-      document.getElementById("message").innerText = "You studied in St Charles Lwanga School, Kitui";
-      document.getElementById("nextBtn").onclick = step3;
-      document.getElementById("cancelBtn").onclick = stopSequence;
+      document.getElementById("message").innerText = "You studied at St Charles Lwanga School, Kitui";
+      document.getElementById("correctBtn").onclick = step3;
+      document.getElementById("wrongBtn").onclick = wrongStep;
     }
 
     function step3() {
-      document.getElementById("message").innerText = "This information has been carefully created by BRIAN KYAMBIA to Mkisiiii 😂😂😂😂";
-      document.getElementById("nextBtn").style.display = "none";
-      document.getElementById("cancelBtn").style.display = "none";
+      document.getElementById("message").innerText = "THIS PROGRAM IS CREATED BY BRIAN KYAMBIA THE COMPUTER MASTER 😂😂😂😂";
+      document.getElementById("correctBtn").style.display = "none";
+      document.getElementById("wrongBtn").style.display = "none";
     }
 
-    function stopSequence() {
-      document.getElementById("message").innerText = "Sequence stopped.";
-      document.getElementById("nextBtn").style.display = "none";
-      document.getElementById("cancelBtn").style.display = "none";
+    function wrongStep() {
+      document.getElementById("message").innerText = "YOU ARE VERY STUPID 😜";
+      document.getElementById("correctBtn").style.display = "none";
+      document.getElementById("wrongBtn").style.display = "none";
     }
 
     window.onload = step1;
@@ -56,8 +58,12 @@
 <body>
   <div class="container">
     <h2 id="message"></h2>
-    <button id="nextBtn">Next</button>
-    <button id="cancelBtn">Cancel</button>
+    <button id="correctBtn">Correct</button>
+    <button id="wrongBtn">Wrong</button>
   </div>
 </body>
-</html># Interactive-sequence
+</html>
+
+
+---
+
